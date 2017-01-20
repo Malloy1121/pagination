@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let item of currentList">{{item}}</li>
+</ul>
+<ul>
+  <li style="display: inline-block;"><button [disabled]="currentPage<=1" (click)="changeButtons(currentPage-1)">Pre</button></li>
+  <li style="display: inline-block;" *ngFor="let item of buttons"><button (click)="changeButtons(item)" [class.currentPage]="currentPage==item">{{item}}</button></li>
+  <li style="display: inline-block;"><button [disabled]="currentPage>=totalPages" (click)="changeButtons(currentPage+1)">next</button></li>
+</ul>
